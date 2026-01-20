@@ -28,3 +28,13 @@ services:
     restart: unless-stopped
     labels:
       - traefik.http.services.cli-proxy-api.loadbalancer.server.port=8317
+    container_name: cliproxyapi
+         networks:
+           coolify:
+             aliases:
+               - cliproxyapi
+networks:
+  coolify:
+    external: true
+
+  

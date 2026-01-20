@@ -26,3 +26,5 @@ services:
       - ${CLI_PROXY_AUTH_PATH:-./auths}:/root/.cli-proxy-api
       - ${CLI_PROXY_LOG_PATH:-./logs}:/CLIProxyAPI/logs
     restart: unless-stopped
+    labels:
+      - traefik.http.services.cli-proxy-api.loadbalancer.server.port=8317
